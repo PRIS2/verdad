@@ -9,6 +9,9 @@
 \RequirePackage[scaled=0.95]{helvet}
 \RequirePackage{pgfgantt}
 
+%%%%%%%%%%%%%% Paquete gestión floats
+\usepackage{float}
+
 
 %%%%%%%%%%%%%%%% Dimensiones
 % PDF 
@@ -118,7 +121,41 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   %%%%%%%%%%%%%                        SOLUCIÓN EQUIPO VERDAD                           %%%%%%
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%% Declarando Nuevo Float 
+\newfloat{Capturas}{t}{cap}
+\floatname{Capturas}{Integrante}
+
  
+%%%%%%%%%%%%%%%%%%%%%% Entorno Que Mostrará El Float
+\newenvironment{Captura}[1]{
+\begin{Capturas}
+\graphicspath{{Capturas/}} 
+\centering
+\includegraphics[width=8cm,height=8cm]{#1}
+\caption{#1}
+\end{Capturas}
+}
+
+%%%%%%%%%%%%%%%%%%%%% Lista de Capturas
+\newenvironment{ListaCapturas}{
+
+\Captura{Diego Cangas}
+\Captura{Felipe Cano}
+\Captura{Fran Martinez}
+\Captura{Daniel Martinez}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   %%%%%%%%%%%%%%%%%%%%%                 Fin Solución                           %%%%%%
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 
